@@ -32,636 +32,725 @@
 
 <body>
 
-    <!-- Intro con logo -->
-    <div id="intro-overlay">
-        <div class="intro-logo">
-            <img src="img/arsitel logo.png" alt="Arsitel Advisory">
+    <!-- Intro Logo Overlay -->
+    <div id="intro-logo-overlay">
+        <div class="intro-logo-wrapper">
+            <!-- Cambiar la ruta por tu logo en alta -->
+            <img src="img/arsitel logo.png" alt="Arsitel Advisory" class="intro-logo-img" />
         </div>
     </div>
 
-    <!-- ENVOLVEMOS TODO EL CONTENIDO EXISTENTE -->
-    <div id="page-content" class="page-hidden">
-        <!-- Top Bar Start -->
-        <div class="top-bar d-none d-md-block">
-            <div class="container-fluid px-lg-5">
-                <div class="row">
-                    <div class="col-md-6">
-                        <small><i class="fa fa-envelope"></i> contacto@arsitel.com.ar</small>
-                        &nbsp;&nbsp;
-                        <small><i class="fa fa-phone"></i> +54 9 358 411 4797</small>
-                    </div>
-                    <div class="col-md-6 text-md-right">
-                        <small>Consultoría especializada para ISPs en crecimiento</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Top Bar End -->
-
-        <!-- Nav Bar Start -->
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid px-lg-5">
-                <a href="#inicio" class="navbar-brand d-flex align-items-center">
-                    <img src="img/arsitel logo.png" alt="Arsitel Advisory">
-                    <!-- <span>ARSITEL ADVISORY</span> -->
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="topbar-left">
+                <a href="mailto:contacto@arsitel.com.ar" class="me-3">
+                    <i class="bi bi-envelope"></i> contacto@arsitel.com.ar
                 </a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon" style="border:1px solid #d4e0ff;border-radius:4px;"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ml-auto align-items-lg-center">
-                        <a href="#inicio" class="nav-item nav-link active">Inicio</a>
-                        <a href="#servicios" class="nav-item nav-link">Servicios</a>
-                        <a href="#planes" class="nav-item nav-link">Paquetes</a>
-                        <a href="#metodo" class="nav-item nav-link">Método</a>
-                        <a href="#contacto" class="nav-item nav-link btn-nav ml-lg-3 mt-2 mt-lg-0">Diagnóstico
-                            gratuito</a>
-                    </div>
-                </div>
+                <a href="tel:+5493584114797">
+                    <i class="bi bi-telephone"></i> +54 9 358 411 4797
+                </a>
             </div>
-        </nav>
-        <!-- Nav Bar End -->
+            <div class="topbar-right d-none d-md-block">
+                Consultoría integral especializada en ISPs en crecimiento
+            </div>
+        </div>
+    </div>
 
-        <!-- Hero Start -->
-        <div id="inicio" class="hero">
-            <div class="hero-bg">
-                <div class="hero-overlay"></div>
-                <div class="container h-100">
-                    <div class="hero-content">
-                        <div class="row w-100 align-items-center">
-                            <div class="col-lg-7 reveal visible">
-                                <div class="hero-tag"><span></span> Consultoría estratégica para ISPs</div>
-                                <h1>Ordenamos tu <strong>operación ISP</strong> para que puedas crecer sin caos.</h1>
-                                <p class="lead">
-                                    <strong style="color: var(--color-secondary);">Arsitel Advisory®</strong> acompaña a
-                                    ISPs en toda la cadena del negocio:
-                                    desde la operación diaria y las cuadrillas de campo, hasta atención
-                                    al cliente, almacenes, finanzas y dirección. Ordenamos procesos,
-                                    reducimos reclamos y preparamos tu empresa para crecer de forma
-                                    rentable y controlada.
-                                </p>
-                                <div class="hero-badges">
-                                    <span class="badge-custom">+25 años en telecomunicaciones</span>
-                                    <span class="badge-custom">Visión 360°: red, operación, soporte, finanzas</span>
-                                    <span class="badge-custom">Experiencia real liderando ISPs en crisis</span>
-                                    <span class="badge-custom">Modelo de operación integral para ISPs</span>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg main-navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#inicio">
+                <!-- Logo navbar (podés usar el mismo archivo del overlay) -->
+                <img src="img/arsitel logo.png" alt="Arsitel Advisory" />
+            </a>
+
+            <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="bi bi-list" style="font-size: 1.6rem;"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-2">
+                    <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#paquetes">Paquetes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#metodo">Método</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#equipo">Equipo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+                <a href="#contacto" class="btn btn-primary-pill btn-pill">
+                    Diagnóstico gratuito
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="page-content" class="page-content">
+
+        <!-- HERO -->
+        <section id="inicio" class="hero">
+            <div class="hero-bg"></div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <div class="hero-badge">
+                            <span class="hero-badge-dot"></span>
+                            Consultoría estratégica para ISPs
+                        </div>
+
+                        <h1 class="hero-title">
+                            Ordenamos tu <span class="accent">operación ISP</span>
+                            para que puedas crecer sin caos.
+                        </h1>
+
+                        <p class="hero-text">
+                            Arsitel Advisory® acompaña a ISPs a ordenar toda la cadena del negocio:
+                            desde la operación diaria y las cuadrillas de campo, hasta atención al cliente,
+                            comercial, cobranzas, logística, administración y dirección.
+                            Venimos del mundo real: reordenamos procesos, bajamos fricción
+                            y preparamos tu empresa para crecer de forma rentable y controlada.
+                        </p>
+
+                        <div class="hero-badges-row">
+                            <span class="badge-chip">+25 años en telecomunicaciones</span>
+                            <span class="badge-chip">Visión 360°: red, operación, soporte, comercial y finanzas</span>
+                            <span class="badge-chip">Experiencia real liderando ISPs en crisis y expansión</span>
+                            <span class="badge-chip">Modelo integral de gestión empresarial para ISPs</span>
+                        </div>
+
+                        <div class="hero-cta-row">
+                            <a href="#contacto" class="btn btn-primary-pill btn-pill">
+                                Agendar diagnóstico gratuito
+                            </a>
+                            <a href="#paquetes" class="btn btn-outline-light-pill btn-pill">
+                                Ver paquetes Bronce / Plata / Oro / Premium
+                            </a>
+                        </div>
+
+                        <!-- <p class="hero-note">
+                        Sin compromiso. En 30 minutos identificamos 2–3 mejoras concretas para tu operación.
+                    </p> -->
+                    </div>
+
+                    <div class="col-lg-5 mt-4 mt-lg-0">
+                        <div class="metrics-card reveal">
+                            <h5 class="metrics-card-title">
+                                ¿Qué cambia con <span style="color: var(--accent);">Arsitel Advisory®</span>?
+                            </h5>
+
+                            <div class="metric-item">
+                                <div class="metric-label">–30 a –50%</div>
+                                <div class="metric-text">
+                                    menos reclamos técnicos, tickets repetidos
+                                    y problemas operativos.
                                 </div>
-                                <div class="mt-2">
-                                    <a href="#contacto" class="btn btn-primary mr-2 mb-2">Agendar diagnóstico
-                                        gratuito</a>
-                                    <a href="#planes" class="btn btn-outline-light mb-2">Ver paquetes Bronce / Plata /
-                                        Oro /
-                                        Premium</a>
-                                </div>
-                                <!-- <div class="hero-note">
-                                    Sin compromiso. En 30 minutos identificamos 2–3 mejoras concretas para tu operación.
-                                </div> -->
                             </div>
-                            <div class="col-lg-5 mt-4 mt-lg-0">
-                                <div class="hero-side-card card-glow reveal">
-                                    <h5>¿Qué cambia con <strong style="color: var(--color-secondary);">Arsitel
-                                            Advisory®</strong>?</h5>
-                                    <div class="hero-kpis">
-                                        <div class="hero-kpi">
-                                            <strong>–30 a –50%</strong>
-                                            <p>menos reclamos técnicos y tickets recurrentes</p>
-                                        </div>
-                                        <div class="hero-kpi">
-                                            <strong>+20% a +40%</strong>
-                                            <p>más productividad real en operación y cuadrillas</p>
-                                        </div>
-                                        <div class="hero-kpi">
-                                            <strong>+Mejor NPS</strong>
-                                            <p>experiencia del cliente más predecible y estable</p>
-                                        </div>
-                                        <div class="hero-kpi">
-                                            <strong>+Control total</strong>
-                                            <p>procesos claros, métricas confiables y tableros por área</p>
-                                        </div>
-                                        <div class="hero-kpi">
-                                            <strong>–15% a –25%</strong>
-                                            <p>reducción de costos operativos y pérdidas internas</p>
-                                        </div>
-                                        <div class="hero-kpi">
-                                            <strong>+Orden empresarial</strong>
-                                            <p>
-                                                operación, soporte, almacenes, finanzas y equipos alineados
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <small>
-                                        Resultados basados en proyectos reales de reingeniería en ISPs.
-                                        Cada caso se trabaja con diagnóstico propio y plan a medida.
-                                    </small>
+
+                            <div class="metric-item">
+                                <div class="metric-label">+20% a +40%</div>
+                                <div class="metric-text">
+                                    más productividad real en cuadrillas, soporte,
+                                    comercial y administración.
                                 </div>
                             </div>
+
+                            <div class="metric-item">
+                                <div class="metric-label">+Mejor NPS &amp; menos churn</div>
+                                <div class="metric-text">
+                                    experiencia del cliente más estable gracias a mejoras en
+                                    comunicación, branding, servicio al cliente y procesos comerciales.
+                                </div>
+                            </div>
+
+                            <div class="metric-item">
+                                <div class="metric-label">+Control total por área</div>
+                                <div class="metric-text">
+                                    tableros claros, métricas confiables y normas operativas
+                                    unificadas en operación, soporte, comercial, cobranzas y finanzas.
+                                </div>
+                            </div>
+
+                            <div class="metric-item">
+                                <div class="metric-label">–15% a –25%</div>
+                                <div class="metric-text">
+                                    reducción de costos por optimización de compras, stock,
+                                    planificación y uso de recursos internos.
+                                </div>
+                            </div>
+
+                            <div class="metric-item">
+                                <div class="metric-label">+Orden empresarial real</div>
+                                <div class="metric-text">
+                                    operación, soporte, almacenes, finanzas, cobranzas,
+                                    marketing, RRHH y equipos alineados bajo un mismo
+                                    modelo de gestión.
+                                </div>
+                            </div>
+
+                            <p class="metrics-note">
+                                Resultados basados en proyectos reales de reingeniería en ISPs.
+                                Cada caso se trabaja con diagnóstico propio y plan a medida.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Hero End -->
-
-        <!-- Beneficios Start (Carrusel) -->
-        <div class="section">
+        <!-- POR QUÉ UNA CONSULTORÍA PARA ISPs -->
+        <section id="porque">
             <div class="container">
-                <div class="section-dark-card reveal">
+                <div class="big-card reveal">
                     <h2 class="section-title">¿Por qué una consultoría específica para ISPs?</h2>
-                    <p class="section-subtitle">
-                        No es una consultora genérica. Arsitel Advisory nace dentro de un ISP real, desde la trinchera:
-                        operación, campo, atención al cliente y dirección.
+                    <p class="section-subtitle mb-4">
+                        No somos una consultora genérica. Arsitel Advisory nace dentro de un ISP real,
+                        desde la trinchera: operación, campo, clientes, almacenes, finanzas, comercial
+                        y dirección. Sabemos lo que pasa cuando la red crece y la organización no
+                        acompaña al mismo ritmo.
                     </p>
 
-                    <div class="owl-carousel owl-theme carousel-benefits">
-                        <div class="benefit-card card-glow">
-                            <div class="benefit-pill">OPERACIÓN</div>
-                            <h5>Menos caos, más previsibilidad</h5>
-                            <p>
-                                Ordenamos tareas, turnos, cuadrillas, stock y prioridades.
-                                Procesos claros para que el día a día no dependa de “apagar incendios”.
-                            </p>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="reason-card">
+                                <div class="reason-tag">Operación</div>
+                                <h5 class="mb-2">Menos caos, más previsibilidad</h5>
+                                <p class="text-soft mb-0">
+                                    Ordenamos tareas, turnos, cuadrillas, stock y prioridades.
+                                    Procesos claros para que el día a día no dependa de “apagar incendios”
+                                    en la red o en el soporte.
+                                </p>
+                            </div>
                         </div>
 
-                        <div class="benefit-card card-glow">
-                            <div class="benefit-pill">NEGOCIO</div>
-                            <h5>Escalar sin romper la red</h5>
-                            <p>
-                                Diseñamos estándares técnicos y operativos para que puedas crecer en nuevas zonas
-                                manteniendo calidad, márgenes y reputación.
-                            </p>
+                        <div class="col-md-4">
+                            <div class="reason-card">
+                                <div class="reason-tag">Negocio</div>
+                                <h5 class="mb-2">Escalar sin romper la red</h5>
+                                <p class="text-soft mb-0">
+                                    Diseñamos estándares técnicos, operativos y comerciales
+                                    para que puedas crecer en nuevas zonas, manteniendo calidad,
+                                    márgenes y reputación.
+                                </p>
+                            </div>
                         </div>
 
-                        <div class="benefit-card card-glow">
-                            <div class="benefit-pill">PERSONAS</div>
-                            <h5>Equipos alineados y medibles</h5>
-                            <p>
-                                Definimos roles, responsabilidades, KPIs y tableros que todo el equipo puede entender y
-                                seguir.
-                            </p>
+                        <div class="col-md-4">
+                            <div class="reason-card">
+                                <div class="reason-tag">Personas</div>
+                                <h5 class="mb-2">Equipos alineados y medibles</h5>
+                                <p class="text-soft mb-0">
+                                    Definimos roles, responsabilidades, KPIs y tableros que todo
+                                    el equipo puede entender y seguir: técnicos, backoffice,
+                                    comercial, cobranzas y dirección.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Beneficios End -->
+        </section>
 
-        <!-- Servicios Start (Carrusel) -->
-        <div id="servicios" class="section">
+        <!-- SERVICIOS -->
+        <section id="servicios">
             <div class="container">
-                <div class="section-dark-card reveal">
+                <div class="big-card reveal">
                     <h2 class="section-title">Servicios de Arsitel Advisory</h2>
-                    <p class="section-subtitle">
-                        Podemos acompañarte de punta a punta o en módulos según la madurez de tu ISP.
+                    <p class="section-subtitle mb-4">
+                        Podemos acompañarte de punta a punta o en módulos, según la madurez
+                        de tu ISP y los objetivos de crecimiento que tengas.
                     </p>
 
-                    <div class="owl-carousel owl-theme carousel-services">
-                        <div class="service-card card-glow">
-                            <h5>✔ Auditoría 360° del ISP</h5>
-                            <p>Relevo profundo de todas las áreas críticas:</p>
-                            <ul>
-                                <li>Operaciones y cuadrillas de campo</li>
-                                <li>Red FTTH / Wireless, OLTs, ONTs, planta externa</li>
-                                <li>Soporte técnico y atención al cliente</li>
-                                <li>Almacenes, stock, procesos internos</li>
-                            </ul>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="service-card">
+                                <h4>Auditoría 360° del ISP</h4>
+                                <p class="text-soft">
+                                    Relevo profundo de todas las áreas críticas:
+                                </p>
+                                <ul>
+                                    <li>Operaciones y cuadrillas de campo.</li>
+                                    <li>Red FTTH / Wireless, OLTs, ONTs, planta externa.</li>
+                                    <li>Soporte técnico y atención al cliente.</li>
+                                    <li>Comercial, marketing, rebranding y churn.</li>
+                                    <li>Almacenes, stock, logística y procesos internos.</li>
+                                    <li>Finanzas, cobranzas y gestión administrativa.</li>
+                                </ul>
+                            </div>
                         </div>
 
-                        <div class="service-card card-glow">
-                            <h5>✔ Plan de Transformación</h5>
-                            <p>Documento ejecutable, no un “powerpoint bonito”:</p>
-                            <ul>
-                                <li>Mapa de procesos actuales y propuestos</li>
-                                <li>Definición de KPIs y tableros de control</li>
-                                <li>Estándares operativos y técnicos por área</li>
-                                <li>Roadmap de implementación por fases</li>
-                            </ul>
+                        <div class="col-md-4">
+                            <div class="service-card">
+                                <h4>Plan de Transformación</h4>
+                                <p class="text-soft">
+                                    Documento ejecutable, no un “powerpoint bonito”:
+                                </p>
+                                <ul>
+                                    <li>Mapa de procesos actuales y propuestos.</li>
+                                    <li>Definición de KPIs por área
+                                        (operación, soporte, comercial, finanzas y clientes).</li>
+                                    <li>Estándares operativos y técnicos por área.</li>
+                                    <li>Tableros de gestión para dirección y mandos medios.</li>
+                                    <li>Roadmap de implementación por fases y prioridades.</li>
+                                </ul>
+                            </div>
                         </div>
 
-                        <div class="service-card card-glow">
-                            <h5>✔ Implementación & Capacitación</h5>
-                            <p>Acompañamiento para que el cambio suceda:</p>
-                            <ul>
-                                <li>Capacitación a mandos medios y técnicos</li>
-                                <li>Ajustes de procesos en operación real</li>
-                                <li>Seguimiento de indicadores y correcciones</li>
-                                <li>Soporte remoto para dirección y jefaturas</li>
-                            </ul>
+                        <div class="col-md-4">
+                            <div class="service-card">
+                                <h4>Implementación &amp; Capacitación</h4>
+                                <p class="text-soft">
+                                    Acompañamiento para que el cambio suceda en la operación real:
+                                </p>
+                                <ul>
+                                    <li>Capacitación a equipos técnicos, comerciales y administrativos.</li>
+                                    <li>Diseño de mesas de ayuda, guardias y flujos de atención.</li>
+                                    <li>Implementación de tableros y rutinas de seguimiento.</li>
+                                    <li>Soporte remoto para dirección y jefaturas.</li>
+                                    <li>Ajustes sobre la marcha con datos reales.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
                 </div>
             </div>
-        </div>
-        <!-- Servicios End -->
+        </section>
 
-        <!-- Planes Start (Carrusel) -->
-        <div id="planes" class="section">
+        <!-- PAQUETES -->
+        <section id="paquetes">
             <div class="container">
-                <div class="section-dark-card reveal">
+                <div class="big-card reveal">
                     <h2 class="section-title">Paquetes Bronce / Plata / Oro / Premium</h2>
-                    <p class="section-subtitle">
-                        Diseñados para distintos tamaños y momentos del ISP. Todos los paquetes pueden combinar trabajo
-                        remoto y presencial.
+                    <p class="section-subtitle mb-4">
+                        Diseñados para distintos tamaños y momentos del ISP.
+                        Todos los paquetes pueden combinar trabajo remoto y presencial.
                     </p>
 
-                    <div class="owl-carousel owl-theme carousel-plans">
-                        <div class="plan-card card-glow">
-                            <div>
-                                <div class="plan-name">Bronce</div>
-                                <div class="plan-tag">Diagnóstico inicial & roadmap</div>
-                                <div class="plan-price">Desde US$ X</div>
-                                <small>Duración típica: 2–3 semanas</small>
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <div class="pricing-card">
+                                <div class="pricing-name">Bronce</div>
+                                <div class="pricing-tagline">Diagnóstico inicial &amp; roadmap</div>
+                                <div class="pricing-price">Desde US$ X</div>
+                                <div class="pricing-duration">Duración típica: 2–3 semanas</div>
                                 <ul>
-                                    <li>Reuniones remotas con dirección</li>
-                                    <li>Diagnóstico general de operación</li>
-                                    <li>Mapa de problemas críticos</li>
-                                    <li>Roadmap de mejoras priorizadas</li>
+                                    <li>Reuniones remotas con dirección.</li>
+                                    <li>Diagnóstico general de operación y soporte.</li>
+                                    <li>Mapa de problemas críticos.</li>
+                                    <li>Roadmap de mejoras priorizadas.</li>
                                 </ul>
-                            </div>
-                            <div class="plan-cta">
-                                <a href="#contacto">Quiero empezar con Bronce</a>
+                                <button class="btn btn-outline-light-pill btn-pill w-100">
+                                    Quiero empezar con Bronce
+                                </button>
                             </div>
                         </div>
 
-                        <div class="plan-card card-glow">
-                            <div>
-                                <div class="plan-name">Plata</div>
-                                <div class="plan-tag">Auditoría 360° + Plan de Transformación</div>
-                                <div class="plan-price">Desde US$ X</div>
-                                <small>Duración típica: 4–6 semanas</small>
+                        <div class="col-md-3">
+                            <div class="pricing-card">
+                                <div class="pricing-name">Plata</div>
+                                <div class="pricing-tagline">Auditoría 360° + Plan de Transformación</div>
+                                <div class="pricing-price">Desde US$ X</div>
+                                <div class="pricing-duration">Duración típica: 4–6 semanas</div>
                                 <ul>
-                                    <li>Auditoría 360° (operación, red, soporte)</li>
-                                    <li>Documento de Plan de Transformación</li>
-                                    <li>Definición de KPIs y tableros</li>
-                                    <li>Sesión de presentación a todo el equipo clave</li>
+                                    <li>Auditoría 360° (operación, soporte, comercial, finanzas).</li>
+                                    <li>Documento de Plan de Transformación.</li>
+                                    <li>Definición de KPIs y tableros.</li>
+                                    <li>Sesión de presentación a todo el equipo clave.</li>
                                 </ul>
-                            </div>
-                            <div class="plan-cta">
-                                <a href="#contacto">Explorar paquete Plata</a>
+                                <button class="btn btn-outline-light-pill btn-pill w-100">
+                                    Explorar paquete Plata
+                                </button>
                             </div>
                         </div>
 
-                        <div class="plan-card highlight card-glow">
-                            <div>
-                                <div class="plan-name">Oro</div>
-                                <div class="plan-tag">Transformación guiada (remota + presencial)</div>
-                                <div class="plan-price">Desde US$ X</div>
-                                <small>Duración típica: 3–6 meses</small>
+                        <div class="col-md-3">
+                            <div class="pricing-card highlight">
+                                <div class="pricing-name">Oro</div>
+                                <div class="pricing-tagline">Transformación guiada (remota + presencial)</div>
+                                <div class="pricing-price">Desde US$ X</div>
+                                <div class="pricing-duration">Duración típica: 3–6 meses</div>
                                 <ul>
-                                    <li>Todo lo incluido en Plata</li>
-                                    <li>Visitas presenciales clave (operación & campo)</li>
-                                    <li>Implementación acompañada de nuevos procesos</li>
-                                    <li>Seguimiento mensual de KPIs y ajustes</li>
+                                    <li>Todo lo incluido en Plata.</li>
+                                    <li>Visitas presenciales clave (operación, campo y dirección).</li>
+                                    <li>Implementación acompañada de nuevos procesos.</li>
+                                    <li>Seguimiento mensual de KPIs y ajustes.</li>
                                 </ul>
-                            </div>
-                            <div class="plan-cta">
-                                <a href="#contacto">Es el paquete ideal para mi ISP</a>
+                                <button class="btn btn-primary-pill btn-pill w-100">
+                                    Es el paquete ideal para mi ISP
+                                </button>
                             </div>
                         </div>
 
-                        <div class="plan-card card-glow">
-                            <div>
-                                <div class="plan-name">Premium</div>
-                                <div class="plan-tag">Acompañamiento anual tipo “fractional COO”</div>
-                                <div class="plan-price">A medida</div>
-                                <small>Duración típica: 9–12 meses</small>
+                        <div class="col-md-3">
+                            <div class="pricing-card">
+                                <div class="pricing-name">Premium</div>
+                                <div class="pricing-tagline">Acompañamiento anual tipo “fractional COO”</div>
+                                <div class="pricing-price">A medida</div>
+                                <div class="pricing-duration">Duración típica: 9–12 meses</div>
                                 <ul>
-                                    <li>Todo lo incluido en Oro</li>
-                                    <li>Acompañamiento continuo a gerencia/propietarios</li>
-                                    <li>Participación en comités de dirección</li>
-                                    <li>Soporte estratégico para expansión y nuevos negocios</li>
+                                    <li>Todo lo incluido en Oro.</li>
+                                    <li>Acompañamiento continuo a gerencia / propietarios.</li>
+                                    <li>Participación en comités de dirección.</li>
+                                    <li>Soporte estratégico para expansión y nuevos negocios.</li>
                                 </ul>
-                            </div>
-                            <div class="plan-cta">
-                                <a href="#contacto">Quiero hablar sobre Premium</a>
+                                <button class="btn btn-outline-light-pill btn-pill w-100">
+                                    Quiero hablar sobre Premium
+                                </button>
                             </div>
                         </div>
                     </div>
 
                 </div>
             </div>
-        </div>
-        <!-- Planes End -->
+        </section>
 
-        <!-- Método Start (Carrusel de pasos) -->
-        <div id="metodo" class="section">
+        <!-- MÉTODO + SOBRE ARSITEL -->
+        <section id="metodo">
             <div class="container">
-                <div class="section-dark-card reveal">
-                    <h2 class="section-title">Cómo trabajamos juntos</h2>
-                    <p class="section-subtitle">
-                        Metodología clara, enfocada en resultados concretos y medibles para tu ISP.
-                    </p>
-
-                    <div class="owl-carousel owl-theme carousel-steps">
-                        <div class="step-card card-glow">
-                            <div class="step-number">Paso 1</div>
-                            <div class="step-title">Diagnóstico 360° del ISP</div>
-                            <p>
-                                Analizamos la operación completa de la empresa: red, procesos, equipos, indicadores,
-                                estructura administrativa, gestión de clientes, agenda técnica, stock y cultura interna.
-                                El objetivo es entender cómo se trabaja hoy y detectar oportunidades reales de mejora.
+                <div class="row g-4">
+                    <div class="col-lg-7">
+                        <div class="big-card reveal">
+                            <h2 class="section-title">Cómo trabajamos juntos</h2>
+                            <p class="section-subtitle mb-4">
+                                Metodología clara, enfocada en resultados concretos y medibles
+                                para tu ISP.
                             </p>
-                        </div>
 
-                        <div class="step-card card-glow">
-                            <div class="step-number">Paso 2</div>
-                            <div class="step-title">Plan de Transformación</div>
-                            <p>
-                                Con la información del diagnóstico elaboramos un plan claro y ejecutable.
-                                Incluye procesos, responsables, prioridades, KPIs, metodología de trabajo y un roadmap
-                                por etapas para ordenar la operación y mejorar los resultados.
-                            </p>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="step-card">
+                                        <div class="step-label">Paso 1</div>
+                                        <h5>Diagnóstico</h5>
+                                        <p class="text-soft mb-0">
+                                            Reuniones con dirección y mandos clave.
+                                            Relevamos la foto actual de operación, red,
+                                            clientes, comercial y finanzas básicas del servicio.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="step-card">
+                                        <div class="step-label">Paso 2</div>
+                                        <h5>Plan de Transformación</h5>
+                                        <p class="text-soft mb-0">
+                                            Entregamos un documento concreto con procesos,
+                                            KPIs, estándares y un roadmap por etapas para toda
+                                            la organización.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="step-card">
+                                        <div class="step-label">Paso 3</div>
+                                        <h5>Implementación</h5>
+                                        <p class="text-soft mb-0">
+                                            Acompañamos al equipo para llevar el plan a la práctica:
+                                            capacitaciones, ajustes en el día a día y soporte remoto
+                                            a dirección y mandos.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="step-card">
+                                        <div class="step-label">Paso 4</div>
+                                        <h5>Seguimiento</h5>
+                                        <p class="text-soft mb-0">
+                                            Revisamos periódicamente indicadores, resultados
+                                            y nuevas necesidades para ajustar el rumbo del ISP
+                                            en el tiempo.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="step-card card-glow">
-                            <div class="step-number">Paso 3</div>
-                            <div class="step-title">Implementación en conjunto con el equipo</div>
-                            <p>
-                                Acompañamos a la empresa en la adopción del plan: capacitaciones, ajustes operativos,
-                                reorganización de tareas y flujos, adaptación de herramientas y definición de nuevas
-                                rutinas de trabajo.
-                                No dejamos el documento: trabajamos con la gente para que los cambios sucedan.
-                            </p>
-                        </div>
-
-                        <div class="step-card card-glow">
-                            <div class="step-number">Paso 4</div>
-                            <div class="step-title">Métricas y tableros de control</div>
-                            <p>
-                                Definimos indicadores que permiten medir tiempos de resolución, eficiencia operativa,
-                                desempeño técnico, reclamos, experiencia del cliente y uso de recursos.
-                                Creamos tableros que muestran el estado real del ISP para tomar decisiones con
-                                información actualizada.
-                            </p>
-                        </div>
-                        <div class="step-card card-glow">
-                            <div class="step-number">Paso 5</div>
-                            <div class="step-title">Seguimiento y evolución continua</div>
-                            <p>
-                                Acompañamos periódicamente a la dirección y a los equipos para sostener la mejora.
-                                Revisamos resultados, reforzamos lo que funciona, ajustamos lo que se desvía y
-                                acompañamos a la empresa a consolidar una operación ordenada, medible y preparada para
-                                crecer.
-                            </p>
-                        </div>
-
                     </div>
 
-                    <div class="row mt-4">
-                        <div class="col-lg-7 mb-3 about-text reveal">
-                            <small style="letter-spacing:0.14em;text-transform:uppercase;color:var(--color-secondary);">
+                    <div class="col-lg-5">
+                        <div class="big-card reveal">
+                            <div class="pill-label mb-2">
                                 Sobre Arsitel Advisory
-                            </small>
-                            <h4 style="color:#f5f8ff;">Consultoría creada desde la operación real de un ISP.</h4>
-                            <p>
-                                Arsitel Advisory nace de la experiencia real de dirigir y transformar un ISP en su
-                                operación diaria. No hablamos desde la teoría, sino desde haber trabajado en
-                                campo, con equipos, procesos y clientes.
-
-                                Acompañamos a ISPs que buscan orden, eficiencia y crecimiento. Nuestro enfoque
-                                es integral: redes, operación técnica, administración, logística, atención al
-                                cliente, procesos comerciales, cultura interna y comunicación.
-
-                                Cada recomendación se basa en lo que funciona en la práctica y en un método
-                                probado. Nuestro objetivo es que el ISP opere con claridad y pueda crecer sin
-                                desorganizarse.
+                            </div>
+                            <h3 class="mb-3" style="font-size: 22px;">
+                                Consultoría creada desde la operación real de un ISP.
+                            </h3>
+                            <p class="text-soft">
+                                Arsitel Advisory nace de la experiencia de más de dos décadas
+                                en telecomunicaciones y de haber tomado un ISP en crisis
+                                para llevarlo a una operación ordenada, escalable y con
+                                mejores resultados.
                             </p>
-
-                        </div>
-                        <div class="col-lg-5 mb-3">
-                            <div class="about-card card-glow reveal">
-                                <strong>Sobre Carlo Rodríguez</strong>
-                                <p>
-                                    Gerente de Operaciones y “transformador empresarial” en el mundo ISP.
-                                </p>
-                                <ul>
-                                    <li>+25 años de experiencia en telecomunicaciones (FTTH, Wireless, redes híbridas).
-                                    </li>
-                                    <li>Reingeniería completa de un ISP en Argentina: orden, procesos, almacenes,
-                                        métricas.
-                                    </li>
-                                    <li>Fuerte enfoque en combinar “campo + dirección + sistemas” para lograr resultados
-                                        reales.</li>
-                                </ul>
-                                <p class="mt-2">
-                                    Hoy, a través de Arsitel Advisory, pone esa experiencia al servicio de ISPs
-                                    que quieren dar el siguiente salto de profesionalización y crecimiento.
-                                </p>
-                            </div>
+                            <p class="text-soft">
+                                No hablamos desde la teoría, sino desde el trabajo de campo:
+                                reingeniería de áreas, diseño de módulos de software,
+                                operación de redes FTTH/Wireless, logística,
+                                comercial, cobranzas y liderazgo de equipos.
+                            </p>
+                            <ul class="text-soft" style="font-size: 14px;">
+                                <li>Reorganización integral de operaciones de ISP.</li>
+                                <li>Diseño de procesos y KPIs para equipos técnicos,
+                                    comerciales y administrativos.</li>
+                                <li>Implementación de herramientas de gestión y tableros
+                                    para dirección y mandos medios.</li>
+                            </ul>
                         </div>
                     </div>
-
                 </div>
             </div>
-        </div>
-        <!-- Método End -->
+        </section>
 
-        <!-- Contacto Start -->
-        <div id="contacto" class="section">
+        <!-- EQUIPO -->
+        <section id="equipo" class="team-section">
             <div class="container">
-                <div class="section-dark-card reveal">
-                    <div class="row">
-                        <div class="col-lg-6 mb-3">
-                            <div class="contact-card card-glow reveal h-100">
-                                <h2 class="section-title">Agendemos un diagnóstico inicial</h2>
-                                <p>
-                                    Contame brevemente cómo está tu ISP hoy y qué te preocupa.
-                                    Te responderé personalmente para coordinar una reunión remota de diagnóstico (sin
-                                    costo).
-                                </p>
-                                <p style="font-size:12px;color:#c4d1ff;margin-top:6px;">
-                                    Trabajamos con ISPs de distintos tamaños. Podemos combinar trabajo remoto y visitas
-                                    presenciales
-                                    según la complejidad del proyecto y la ubicación.
-                                </p>
+                <h2 class="section-title text-center mb-2">Nuestro equipo de consultores</h2>
+                <p class="section-subtitle text-center mb-5">
+                    Arsitel Advisory está formado por profesionales que vienen de dirigir y transformar
+                    ISPs reales. Combinamos operación, comercial, administración y comunicación
+                    en un enfoque integrado.
+                </p>
+
+                <div class="row g-4 justify-content-center">
+                    <!-- Carlo -->
+                    <div class="col-md-4">
+                        <div class="team-card text-center reveal">
+                            <div class="team-photo" style="background-image:url('img/team-carlo.jpg');">
                             </div>
+                            <h4 class="team-name">Carlo Rodríguez</h4>
+                            <p class="team-role">
+                                Consultor Principal · Operación &amp; Estrategia ISP
+                            </p>
+                            <p class="team-desc">
+                                +25 años en telecomunicaciones. Experto en operación integral de ISPs:
+                                red, soporte, cuadrillas, almacenes, procesos y métricas.
+                                Diseñó e implementó mesas de ayuda, guardias de técnicos,
+                                tableros de gestión y automatizaciones (incluyendo Botmaker)
+                                para mejorar la experiencia y la eficiencia del servicio.
+                            </p>
                         </div>
-                        <div class="col-lg-6 mb-3">
-                            <div class="contact-card card-glow reveal h-100">
-                                <form>
-                                    <div class="form-group">
-                                        <label for="nombre">Nombre y apellido</label>
-                                        <input type="text" class="form-control" id="nombre"
-                                            placeholder="Ej: Juan Pérez">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="empresa">Empresa / ISP</label>
-                                        <input type="text" class="form-control" id="empresa"
-                                            placeholder="Nombre del ISP">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Correo electrónico</label>
-                                        <input type="email" class="form-control" id="email"
-                                            placeholder="tu@empresa.com">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="pais">País / Ciudad</label>
-                                        <input type="text" class="form-control" id="pais"
-                                            placeholder="Ej: Argentina - Río Cuarto, Córdoba">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="tamano">Tamaño aproximado del ISP</label>
-                                        <select class="form-control" id="tamano">
-                                            <option value="">Seleccionar…</option>
-                                            <option value="-1000">&lt; 1.000 clientes</option>
-                                            <option value="1000-5000">1.000 – 5.000 clientes</option>
-                                            <option value="5000-15000">5.000 – 15.000 clientes</option>
-                                            <option value="15000+">&gt; 15.000 clientes</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="mensaje">¿Qué te preocupa hoy de tu ISP?</label>
-                                        <textarea class="form-control" id="mensaje" rows="3"
-                                            placeholder="Contame brevemente el contexto, principales problemas y qué te gustaría lograr."></textarea>
-                                    </div>
-                                    <button type="submit" class="btn-submit">Enviar mensaje</button>
-                                </form>
+                    </div>
+
+                    <!-- María Victoria -->
+                    <div class="col-md-4">
+                        <div class="team-card text-center reveal">
+                            <div class="team-photo" style="background-image:url('img/team-mv.jpg');">
                             </div>
+                            <h4 class="team-name">María Victoria</h4>
+                            <p class="team-role">
+                                Consultora Senior · Comercial, Marca &amp; Experiencia de Cliente
+                            </p>
+                            <p class="team-desc">
+                                Gerente Comercial de Intercity. Especialista en estrategia comercial,
+                                servicio al cliente, marketing, rebranding, redes sociales y posicionamiento
+                                de marca. Lidera iniciativas de churn, diseño de campañas, estrategias
+                                de cobranzas y organización de RRHH para equipos comerciales y de atención.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Norali -->
+                    <div class="col-md-4">
+                        <div class="team-card text-center reveal">
+                            <div class="team-photo" style="background-image:url('img/team-norali.jpg');">
+                            </div>
+                            <h4 class="team-name">Norali</h4>
+                            <p class="team-role">
+                                Consultora Senior · Logística, Administración &amp; Post Venta
+                            </p>
+                            <p class="team-desc">
+                                Especialista en compras y proveedores, logística de servicios,
+                                auditoría de trabajos técnicos, facturación, almacenes y control
+                                administrativo. Gestiona bancos, impuestos y licitaciones, además
+                                de dar soporte al cliente desde el backoffice, asegurando que
+                                la operación tenga soporte interno sólido y ordenado.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto">
+            <div class="container">
+                <div class="row g-4 align-items-stretch">
+                    <div class="col-lg-6">
+                        <div class="big-card reveal h-100">
+                            <h2 class="section-title">Agendemos un diagnóstico inicial</h2>
+                            <p class="section-subtitle mb-4">
+                                Contame brevemente cómo está tu ISP hoy y qué te preocupa.
+                                Te responderé personalmente para coordinar una reunión remota
+                                de diagnóstico (sin costo).
+                            </p>
+                            <p class="text-soft">
+                                Trabajamos con ISPs de distintos tamaños. Podemos combinar
+                                trabajo remoto y visitas presenciales según la complejidad
+                                del proyecto y la ubicación.
+                            </p>
+                            <ul class="text-soft" style="font-size: 14px;">
+                                <li>Relevamos la situación actual de operación, red y clientes.</li>
+                                <li>Identificamos los principales cuellos de botella.</li>
+                                <li>Definimos próximos pasos posibles y nivel de acompañamiento.</li>
+                            </ul>
+                            <p class="text-soft mb-0">
+                                No es una venta agresiva. Es una conversación honesta para ver
+                                si podemos ayudarte a ordenar y escalar tu ISP.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="contact-card reveal h-100">
+                            <form>
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre y apellido</label>
+                                    <input type="text" class="form-control" placeholder="Ej: Juan Pérez" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Empresa / ISP</label>
+                                    <input type="text" class="form-control" placeholder="Nombre del ISP" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Correo electrónico</label>
+                                    <input type="email" class="form-control" placeholder="tu@empresa.com" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">País / Ciudad</label>
+                                    <input type="text" class="form-control"
+                                        placeholder="Ej: Argentina – Río Cuarto, Córdoba" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Tamaño aproximado del ISP</label>
+                                    <select class="form-select">
+                                        <option selected>Seleccionar...</option>
+                                        <option>Hasta 1.000 clientes</option>
+                                        <option>1.000 – 5.000 clientes</option>
+                                        <option>5.000 – 20.000 clientes</option>
+                                        <option>Más de 20.000 clientes</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">¿Qué te preocupa hoy de tu ISP?</label>
+                                    <textarea class="form-control" rows="4"
+                                        placeholder="Contame brevemente el contexto, principales problemas y qué te gustaría lograr."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary-pill btn-pill w-100">
+                                    Enviar mensaje
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Contacto End -->
+    </div> <!-- /page-content -->
 
-        <!-- Footer Start -->
-        <footer class="site-footer">
-            <div class="footer-topbar">
-                <div class="footer-contact">
-                    <small><i class="fa fa-envelope"></i> contacto@arsitel.com.ar</small>
-                    &nbsp;&nbsp;
-                    <small><i class="fa fa-phone"></i> +54 9 358 411 4797</small>
-                </div>
-                <div class="footer-tagline">
-                    Consultoría especializada para ISPs en crecimiento
-                </div>
-            </div>
+    <!-- Back to top -->
+    <div id="back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </div>
 
-            <div class="footer-bottom">
+    <!-- Footer -->
+    <footer>
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="mb-2 mb-md-0">
                 © <span id="year"></span> Arsitel Advisory. Todos los derechos reservados.
             </div>
-        </footer>
+            <div>
+                <span class="me-3">
+                    <i class="bi bi-envelope"></i> contacto@arsitel.com.ar
+                </span>
+                <span class="me-3">
+                    <i class="bi bi-telephone"></i> +54 9 358 411 4797
+                </span>
+                <span>
+                    Consultoría integral para ISPs en crecimiento.
+                </span>
+            </div>
+        </div>
+    </footer>
 
-    </div>
-    <!-- Footer End -->
-    <button id="backToTop" aria-label="Volver al inicio">
-        ↑
-    </button>
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Scripts -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
     <script>
-        // Año en el footer
-        document.getElementById('year').textContent = new Date().getFullYear();
+        // Año en footer
+        document.getElementById("year").textContent = new Date().getFullYear();
 
-        // Scroll reveal con IntersectionObserver
-        if ('IntersectionObserver' in window) {
+        // Mostrar contenido principal después del logo de intro
+        const introOverlay = document.getElementById("intro-logo-overlay");
+        const pageContent = document.getElementById("page-content");
+
+        function hideIntroOverlay() {
+            introOverlay.classList.add("hidden");
+            setTimeout(() => {
+                if (pageContent) {
+                    pageContent.classList.add("visible");
+                }
+            }, 300);
+        }
+
+        // Espera un poco para el efecto
+        window.addEventListener("load", () => {
+            setTimeout(hideIntroOverlay, 1700);
+        });
+
+        // Scroll reveal
+        if ("IntersectionObserver" in window) {
             const observer = new IntersectionObserver((entries, obs) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
+                        entry.target.classList.add("visible");
                         obs.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.18 });
 
-            document.querySelectorAll('.reveal').forEach(el => {
-                if (!el.classList.contains('visible')) {
+            document.querySelectorAll(".reveal").forEach(el => {
+                if (!el.classList.contains("visible")) {
                     observer.observe(el);
                 }
             });
         } else {
-            document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+            // Fallback: mostrar todo
+            document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
+            if (pageContent) pageContent.classList.add("visible");
         }
 
-        // Carruseles
-        $(document).ready(function () {
-            $('.carousel-benefits').owlCarousel({
-                loop: false,
-                margin: 16,
-                nav: false,
-                dots: true,
-                responsive: {
-                    0: { items: 1 },
-                    768: { items: 2 },
-                    992: { items: 3 }
-                }
-            });
-
-            $('.carousel-services').owlCarousel({
-                loop: false,
-                margin: 16,
-                nav: false,
-                dots: true,
-                responsive: {
-                    0: { items: 1 },
-                    768: { items: 2 },
-                    992: { items: 3 }
-                }
-            });
-
-            $('.carousel-plans').owlCarousel({
-                loop: false,
-                margin: 16,
-                nav: false,
-                dots: true,
-                responsive: {
-                    0: { items: 1 },
-                    768: { items: 2 },
-                    992: { items: 3 },
-                    1200: { items: 4 }
-                }
-            });
-
-            $('.carousel-steps').owlCarousel({
-                loop: false,
-                margin: 16,
-                nav: false,
-                dots: true,
-                responsive: {
-                    0: { items: 1 },
-                    768: { items: 2 },
-                    992: { items: 4 }
-                }
-            });
-        });
-
-        window.addEventListener('load', function () {
-            // Marcamos el body como "cargado" para que se vea el contenido
-            document.body.classList.add('loaded');
-
-            var overlay = document.getElementById('intro-overlay');
-            overlay.addEventListener('animationend', function (e) {
-                if (e.animationName === 'introFadeOut') {
-                    overlay.style.display = 'none';
-                }
-            });
-        });
-
-        // Botón "volver al inicio"
-        const backBtn = document.getElementById('backToTop');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backBtn.classList.add('show');
+        // Back to top
+        const backToTopBtn = document.getElementById("back-to-top");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add("visible");
             } else {
-                backBtn.classList.remove('show');
+                backToTopBtn.classList.remove("visible");
             }
         });
 
-        backBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        // Scroll suave para links internos del navbar
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                const targetId = this.getAttribute("href").substring(1);
+                const targetEl = document.getElementById(targetId);
+                if (targetEl) {
+                    e.preventDefault();
+                    const yOffset = -80; // altura aproximada del navbar
+                    const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                }
             });
         });
     </script>
 
 </body>
-
 </html>
+
