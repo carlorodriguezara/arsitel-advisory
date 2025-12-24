@@ -1,0 +1,659 @@
+/* ==========================================================
+   ARSITEL ADVISORY – GRUPO (CSS FULL / Standalone)
+   Identidad: GRAFITO + MAÍZ (lujo silencioso)
+   Objetivo: que GRUPO NO se confunda con ISP (cian/azules)
+   ========================================================== */
+
+/* =========================
+   VARIABLES BASE (antes era styles.css)
+   ========================= */
+
+:root{
+  --bg-main: #020817;
+  --bg-card: #050d1f;
+  --bg-card-soft: rgba(10, 24, 48, 0.90);
+
+  --accent: #00e0ff;
+  --accent-soft: rgba(0, 224, 255, 0.25);
+  --accent-strong: #18ffff;
+
+  --text-main: #f7fbff;
+  --text-soft: #a9b7d5;
+
+  --border-soft: rgba(255,255,255,0.08);
+  --radius-lg: 24px;
+  --shadow-soft: 0 18px 40px rgba(0,0,0,0.55);
+}
+
+/* Reset / base */
+*{ box-sizing:border-box; }
+html,body{ height:100%; margin:0; padding:0; }
+body{
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, #04203a 0, #020817 45%, #020612 100%);
+  color: var(--text-main);
+  overflow-x:hidden;
+}
+a{ color:inherit; text-decoration:none; }
+a:hover{ text-decoration:none; color: var(--accent); }
+
+/* =========================
+   INTRO LOGO OVERLAY
+   ========================= */
+#intro-logo-overlay{
+  position:fixed;
+  inset:0;
+  background: radial-gradient(circle at top, #041a31 0, #020817 55%, #000 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  opacity:1;
+  pointer-events:auto;
+  transition: opacity .6s ease-out;
+}
+#intro-logo-overlay.hidden{
+  opacity:0;
+  pointer-events:none;
+}
+.intro-logo-wrapper{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px;
+  border-radius:999px;
+  background: radial-gradient(circle at center, rgba(0,224,255,0.18), transparent 60%);
+  animation: logoZoom 1.8s ease-out forwards;
+}
+.intro-logo-img{
+  max-width:340px;
+  width:60vw;
+  filter: drop-shadow(0 18px 40px rgba(0,0,0,0.7));
+}
+@keyframes logoZoom{
+  0%{ transform:scale(.75); opacity:0; }
+  40%{ transform:scale(1.06); opacity:1; }
+  100%{ transform:scale(1); opacity:1; }
+}
+
+/* =========================
+   LAYOUT BASE
+   ========================= */
+.page-content{
+  opacity:0;
+  transform: translateY(8px);
+  transition: opacity .5s ease-out .2s, transform .5s ease-out .2s;
+}
+.page-content.visible{
+  opacity:1;
+  transform: translateY(0);
+}
+section{
+  position:relative;
+  padding:80px 0;
+}
+.section-title{
+  font-size:32px;
+  font-weight:600;
+  margin-bottom:8px;
+}
+.section-subtitle{
+  color: var(--text-soft);
+  font-size:15px;
+}
+
+/* =========================
+   TOPBAR / NAVBAR
+   ========================= */
+.topbar{
+  font-size:13px;
+  padding:8px 0;
+  background: rgba(2,10,26,0.95);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.topbar a{ color: var(--text-soft); }
+.topbar a i{ margin-right:6px; }
+.topbar-right{
+  text-align:right;
+  color: var(--text-soft);
+}
+.main-navbar{
+  background: rgba(3,14,36,0.97);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.navbar-brand img{ height:120px; }
+.navbar-nav .nav-link{
+  color: var(--text-soft);
+  font-size:14px;
+  margin:0 6px;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover{
+  color: var(--accent);
+}
+
+/* Botones base */
+.btn-pill{
+  border-radius:999px;
+  padding:10px 22px;
+  font-size:14px;
+  border-width:0;
+}
+.btn-primary-pill{
+  background: radial-gradient(circle at top, var(--accent-strong), var(--accent));
+  color:#020019;
+  box-shadow: 0 0 40px var(--accent-soft);
+}
+.btn-outline-light-pill{
+  border: 1px solid rgba(255,255,255,0.40);
+  color: var(--text-main);
+  background: transparent;
+}
+
+/* =========================
+   HERO BASE
+   ========================= */
+.hero{
+  min-height:80vh;
+  display:flex;
+  align-items:center;
+  padding-top:20px;
+  padding-bottom:80px;
+}
+
+/* La capa .hero-bg la dejamos “genérica” por si tu HTML la tiene */
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(0,224,255,0.16), transparent 55%),
+    radial-gradient(circle at 85% 100%, rgba(0,165,255,0.16), transparent 55%),
+    linear-gradient(135deg, #020b1e 0, #020817 40%, #020818 100%);
+  background-size:cover;
+  background-position:center;
+  mix-blend-mode:normal;
+  filter:saturate(1.1) contrast(1.02);
+  opacity:0.22;
+  pointer-events:none;
+  z-index:-1;
+}
+
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 16px;
+  border-radius:999px;
+  background: rgba(7,32,65,0.90);
+  color: var(--accent);
+  font-size:12px;
+  margin-bottom:22px;
+}
+.hero-badge-dot{
+  width:8px; height:8px;
+  border-radius:999px;
+  background: var(--accent);
+}
+.hero-title{
+  font-size: clamp(32px, 3vw + 18px, 44px);
+  font-weight:600;
+  line-height:1.2;
+  margin-bottom:18px;
+}
+.hero-title span.accent{ color: var(--accent); }
+.hero-text{
+  font-size:15px;
+  color: var(--text-soft);
+  max-width:540px;
+  margin-bottom:24px;
+}
+.hero-badges-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:26px;
+}
+.badge-chip{
+  font-size:12px;
+  padding:8px 14px;
+  border-radius:999px;
+  background: rgba(2,15,38,0.90);
+  border: 1px solid rgba(0,224,255,0.25);
+  color: var(--text-soft);
+}
+.hero-cta-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-bottom:16px;
+}
+.hero-note{
+  font-size:12px;
+  color: var(--text-soft);
+}
+
+/* =========================
+   METRICS CARD
+   ========================= */
+.metrics-card{
+  border-radius: var(--radius-lg);
+  background: var(--bg-card-soft);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+  padding:15px 12px;
+}
+.metrics-card-title{
+  font-size:15px;
+  margin-bottom:18px;
+}
+.metric-item{
+  border-radius:16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  padding:12px 14px;
+  margin-bottom:10px;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.metric-item:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+  border-color:#D8B15A;
+}
+.metric-label{
+  font-size:14px;
+  font-weight:600;
+  color: var(--accent);
+}
+.metric-text{
+  font-size:13px;
+  color: var(--text-soft);
+}
+.metrics-note{
+  font-size:11px;
+  color: var(--text-soft);
+  margin-top:6px;
+}
+
+/* =========================
+   BLOQUES GENERALES
+   ========================= */
+.big-card{
+  border-radius: var(--radius-lg);
+  background: rgba(5,15,38,0.92);
+  border: 1px solid rgba(255,255,255,0.07);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.60);
+  padding:32px 32px 30px;
+}
+.pill-label{
+  display:inline-block;
+  font-size:12px;
+  border-radius:999px;
+  padding:6px 14px;
+  background: rgba(0,224,255,0.10);
+  color: var(--accent);
+  margin-bottom:12px;
+}
+.text-soft{ color: var(--text-soft); }
+
+/* Reason / Service / Pricing / Step */
+.reason-card,
+.service-card,
+.pricing-card,
+.step-card{
+  border-radius:20px;
+  background: rgba(3,13,33,0.98);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding:24px 22px;
+  height:100%;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.reason-card:hover,
+.service-card:hover,
+.step-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.50);
+  border-color: rgba(0,224,255,0.45);
+}
+.reason-tag,
+.step-label{
+  display:inline-block;
+  font-size:11px;
+  padding:4px 10px;
+  border-radius:999px;
+  background: rgba(0,224,255,0.12);
+  color: var(--accent);
+  margin-bottom:10px;
+}
+.step-label{
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  margin-bottom:4px;
+}
+
+.service-card h4{ margin-bottom:12px; }
+.service-card ul{
+  padding-left:18px;
+  font-size:14px;
+  color: var(--text-soft);
+}
+
+.pricing-card{
+  border-radius:24px;
+  padding:26px 22px 24px;
+  position:relative;
+  overflow:hidden;
+}
+.pricing-card.highlight{
+  border-color: rgba(0,224,255,0.70);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.75);
+}
+.pricing-card.highlight::before{
+  content:"";
+  position:absolute;
+  inset:-40%;
+  background: radial-gradient(circle at top, rgba(0,224,255,0.25), transparent 60%);
+  opacity:.4;
+  pointer-events:none;
+}
+.pricing-name{ font-weight:600; margin-bottom:2px; }
+.pricing-tagline{ font-size:13px; color: var(--text-soft); margin-bottom:10px; }
+.pricing-price{ font-size:18px; font-weight:600; color: var(--accent); margin-bottom:4px; }
+.pricing-duration{ font-size:12px; color: var(--text-soft); margin-bottom:12px; }
+.pricing-card ul{
+  padding-left:18px;
+  font-size:14px;
+  color: var(--text-soft);
+  margin-bottom:18px;
+}
+
+/* Team */
+.team-section{
+  background: radial-gradient(circle at top, rgba(2,35,71,0.70), rgba(2,7,19,0.96));
+}
+.team-card{
+  border-radius:22px;
+  background: rgba(3,13,33,0.98);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding:26px 22px 22px;
+  height:100%;
+  box-shadow: 0 18px 38px rgba(0,0,0,0.60);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.team-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 22px 50px rgba(0,0,0,0.80);
+  border-color: rgba(0,224,255,0.55);
+}
+.team-photo{
+  width:160px; height:160px;
+  border-radius:999px;
+  margin: 0 auto 18px;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-color:#020817;
+  box-shadow:
+    0 0 0 3px rgba(0,224,255,0.35),
+    0 14px 32px rgba(0,0,0,0.80);
+}
+.team-name{ font-size:20px; font-weight:600; margin-bottom:4px; }
+.team-role{ font-size:13px; color: var(--accent); margin-bottom:14px; }
+.team-desc{ font-size:13px; color: var(--text-soft); }
+
+/* Contact */
+.contact-card{
+  border-radius:24px;
+  background: rgba(3,13,33,0.98);
+  border: 1px solid rgba(255,255,255,0.07);
+  padding:30px 26px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.65);
+}
+.form-control,
+.form-select{
+  background: rgba(3,13,33,0.95);
+  border-radius:999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  color: var(--text-main);
+  font-size:14px;
+}
+textarea.form-control{ border-radius:18px; }
+.form-control::placeholder,
+.form-select{ color: rgba(168,183,211,0.60); }
+.form-control:focus,
+.form-select:focus{
+  box-shadow: 0 0 0 1px rgba(0,224,255,0.55);
+  border-color: rgba(0,224,255,0.70);
+  background: rgba(5,18,41,0.98);
+}
+
+/* Footer */
+footer{
+  background:#020614;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  padding:22px 0 18px;
+  font-size:12px;
+  color: var(--text-soft);
+}
+
+/* Back to top */
+#back-to-top{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  width:42px; height:42px;
+  border-radius:999px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(3,13,33,0.95);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color: var(--accent);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.60);
+  cursor:pointer;
+  opacity:0;
+  transform: translateY(10px);
+  transition: opacity .25s ease, transform .25s ease;
+  z-index:998;
+}
+#back-to-top.visible{
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* Reveal */
+.reveal{
+  opacity:0;
+  transform: translateY(16px);
+  transition: opacity .6s ease-out, transform .6s ease-out;
+}
+.reveal.visible{
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 991.98px){
+  .hero{ padding-top:40px; }
+  .metrics-card{ margin-top:26px; }
+}
+@media (max-width: 575.98px){
+  .big-card, .contact-card{ padding:22px 18px; }
+  .section-title{ font-size:26px; }
+  .team-card{ padding:22px 18px; }
+}
+
+/* ==========================================================
+   TEMA GRUPO (antes era grupo.css)
+   MAÍZ elegante: reemplaza cian/azul del base
+   ========================================================== */
+
+.theme-grupo{
+  /* BASE (NO ISP) */
+  --bg-main: #0E1117;        /* grafito */
+  --bg-card: #141824;
+  --bg-card-soft: rgba(20,24,36,0.78);
+
+  /* TEXTO */
+  --text-main: #F5F7FA;
+  --text-soft: #B8C0D4;
+
+  /* MAÍZ (acento) */
+  --accent: #E6C26E;         /* maíz elegante */
+  --accent-strong: #F0D88C;
+  --accent-soft: rgba(230,194,110,0.18);
+
+  --border-soft: rgba(255,255,255,0.07);
+  --shadow-soft: 0 18px 40px rgba(0,0,0,0.62);
+}
+
+/* Fondo general GRUPO */
+body.theme-grupo{
+  background:
+    radial-gradient(circle at 20% 10%, rgba(230,194,110,0.08), transparent 55%),
+    linear-gradient(135deg, #0B0E14 0%, #0E1117 45%, #080A10 100%);
+  color: var(--text-main);
+}
+
+/* Navbar GRUPO */
+.theme-grupo .main-navbar{
+  background: rgba(14,17,23,0.82);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Links nav */
+.theme-grupo .navbar-nav .nav-link.active,
+.theme-grupo .navbar-nav .nav-link:hover{
+  color: var(--accent);
+}
+
+/* CTA navbar + primario */
+.theme-grupo .btn-primary-pill,
+.theme-grupo .btn-primary{
+  background: linear-gradient(180deg, #E6C26E, #D8B15A);
+  color:#1B1B1B;
+  box-shadow: 0 6px 18px rgba(230,194,110,0.22);
+}
+
+/* Pills / tags */
+.theme-grupo .pill-label,
+.theme-grupo .hero-badge,
+.theme-grupo .reason-tag,
+.theme-grupo .step-label{
+  background: rgba(230,194,110,0.10);
+  color: var(--accent);
+  border: 1px solid rgba(230,194,110,0.22);
+}
+.theme-grupo .hero-badge-dot{
+  background: var(--accent);
+}
+
+/* Chips (badges) */
+.theme-grupo .badge-chip{
+  background: rgba(20,24,36,0.78);
+  border: 1px solid rgba(230,194,110,0.22);
+  color: rgba(245,247,250,0.82);
+}
+
+/* Cards/paneles look “grafito premium” */
+.theme-grupo .big-card,
+.theme-grupo .service-card,
+.theme-grupo .metrics-card,
+.theme-grupo .reason-card,
+.theme-grupo .team-card,
+.theme-grupo .contact-card,
+.theme-grupo .pricing-card,
+.theme-grupo .step-card{
+  background: rgba(20,24,36,0.78);
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px);
+}
+
+/* Hover MUY sutil */
+.theme-grupo .service-card:hover,
+.theme-grupo .reason-card:hover,
+.theme-grupo .step-card:hover{
+  border-color: rgba(230,194,110,0.35);
+}
+
+/* Títulos destacados */
+.theme-grupo .highlight,
+.theme-grupo .accent,
+.theme-grupo .hero-title span.accent{
+  color: var(--accent);
+}
+
+/* Metrics (label) */
+.theme-grupo .metric-label{
+  color: var(--accent);
+}
+
+/* Inputs focus */
+.theme-grupo input:focus,
+.theme-grupo textarea:focus,
+.theme-grupo select:focus,
+.theme-grupo .form-control:focus,
+.theme-grupo .form-select:focus{
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(230,194,110,0.25);
+}
+
+/* Team ring */
+.theme-grupo .team-photo{
+  box-shadow:
+    0 0 0 3px rgba(230,194,110,0.28),
+    0 14px 32px rgba(0,0,0,0.80);
+}
+
+/* ==================================================
+   HERO GRUPO – Fondo imagen + overlay premium
+   IMPORTANTE: tu HTML debe tener:
+   <section class="hero hero-grupo"> ... <div class="hero-bg-grupo"></div>
+   ================================================== */
+
+.hero-grupo{
+  position: relative;
+  overflow: hidden;
+}
+
+/* Imagen de fondo */
+.hero-grupo .hero-bg-grupo{
+  position:absolute;
+  inset:0;
+  z-index:0;
+
+  /* ✅ Ruta: ajustá el nombre si tu archivo es distinto */
+  background-image: url("../img/fondoGrupoMaiz_2400x1350.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Look maíz + grafito (sin volverse amarillo fuerte) */
+  filter: saturate(0.78) brightness(0.86) contrast(1.06);
+  opacity: 0.92;
+}
+
+/* Overlay para legibilidad + impronta */
+.hero-grupo .hero-bg-grupo::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(900px 520px at 18% 30%, rgba(230,194,110,0.14), transparent 70%),
+    linear-gradient(180deg,
+      rgba(14,17,23,0.52) 0%,
+      rgba(14,17,23,0.74) 70%,
+      rgba(14,17,23,0.88) 100%);
+}
+
+/* Asegura contenido arriba */
+.hero-grupo .container,
+.hero-grupo .row{
+  position: relative;
+  z-index: 1;
+}
+
+/* Si tu HTML usa .hero-bg genérico, lo apagamos para GRUPO */
+.theme-grupo .hero-bg{
+  display:none;
+}

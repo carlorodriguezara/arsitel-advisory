@@ -1,0 +1,55 @@
+/* =========================================================
+   ISP OVERRIDES (NO TOCA styles.css)
+   Archivo: /Styles/isp.css
+   ========================================================= */
+
+/* Tema opcional para identificar página ISP */
+
+/* Asegura que el hero pueda contener el fondo absoluto */
+.hero.hero-isp {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fondo tipo "Business": imagen + gradientes + blur suave */
+.hero-bg.hero-bg-isp {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  /* IMPORTANTE: ruta correcta desde /Styles/ -> /img/ */
+  background-image:
+    /* radial-gradient(circle at 15% 10%, rgba(0, 224, 255, 0.22), transparent 55%),
+    radial-gradient(circle at 85% 90%, rgba(0, 165, 255, 0.18), transparent 55%),
+    linear-gradient(135deg, rgba(2, 11, 30, 0.88) 0%, rgba(2, 8, 23, 0.92) 45%, rgba(2, 8, 24, 0.96) 100%), */
+    url("../img/FondoISP.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* “espectacular” pero sutil */
+  opacity: 0.42;
+
+  /* Nitidez + look premium */
+  filter: saturate(1.08) contrast(1.06);
+
+  /* Difuminado tipo fondo (podés bajar/subir) */
+  transform: scale(1.04);
+}
+
+/* Si querés MÁS nítida (menos blur), NO uses blur.
+   Si querés MÁS difuminada, activá esto: */
+
+.hero-bg.hero-bg-isp {
+  filter: saturate(1.08) contrast(1.06) blur(2px);
+  opacity: 0.75;
+}
+
+
+/* Extra: que las cards se despeguen visualmente del fondo */
+.hero.hero-isp .metrics-card,
+.hero.hero-isp .big-card {
+  backdrop-filter: blur(10px);
+}
